@@ -1,3 +1,15 @@
+import {useCallback} from 'react'
+
+import {BigList} from './big-list'
+
 export function BigListWrapper() {
-  return null
+  console.log(`render BigListWrapper`)
+  
+  const fn = useCallback(e => {
+    console.log(e.target.textContent)
+  }, [])
+
+  return (
+    <BigList fn={fn} />
+  )
 }

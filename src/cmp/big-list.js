@@ -1,11 +1,10 @@
-export function BigList() {
-  console.log(`render big list`)
-  const click = e => {
-    console.log(e.target.textContent)
-  }
-  const items = [0, 1, 2, 3, 4, 5].map(item => (
-    <p onClick={click} key={item}>{item}</p>
+export function BigList({fn}) {
+  console.log(`render BigList`)
+  const source = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+  const items = source.map(item => (
+    <p onClick={fn} key={item}>{item}</p>
   ))
+  
   return (
     <div>
       {items}
